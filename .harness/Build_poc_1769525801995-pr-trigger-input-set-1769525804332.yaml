@@ -1,0 +1,14 @@
+inputSet:
+  name: Build_poc_1769525801995-pr-trigger-input-set
+  identifier: Build_poc_1769525801995prtriggerinputset
+  orgIdentifier: default
+  projectIdentifier: appdemo
+  pipeline:
+    identifier: Build_poc_1769525801995
+    properties:
+      ci:
+        codebase:
+          build:
+            type: PR
+            spec:
+              number: <+trigger.prNumber>
