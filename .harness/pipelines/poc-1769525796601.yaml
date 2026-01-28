@@ -21,24 +21,14 @@ pipeline:
                     command: echo "Welcome to Harness CI"
               - step:
                   type: Test
-                  name: Test_1
-                  identifier: Test_1
+                  name: Test
+                  identifier: Test
                   spec:
-                    connectorRef: <+input>
-                    image: golang:1.15
                     shell: Sh
                     command: |-
-                      go test -v ./...
-                      go test -cover ./...
-                      go test -v ./pkg/module1 ./pkg/module2
-                       go test -race ./...
-                    reports:
-                      type: JUnit
-                      spec:
-                        paths:
-                          - "*xml"
+                      cd ./python-tests
+                      pytest
                     intelligenceMode: true
-                  description: unit test
           platform:
             os: Linux
             arch: Amd64
